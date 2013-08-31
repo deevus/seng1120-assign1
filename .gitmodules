@@ -1,0 +1,3 @@
+[submodule "datastructures"]
+	path = datastructures
+	url = git@github.com:deevus/seng1120-datastructures.git
