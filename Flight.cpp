@@ -19,4 +19,16 @@ namespace assign1 {
   unsigned int Flight::get_arrival_time_minutes() {
     return arrival_time_minutes;
   }
+
+  void Flight::set_flight_number(string flight_number) {
+    this->flight_number = flight_number;
+  }
+
+  void Flight::set_arrival_time_hours(unsigned int arrival_time_hours) {
+    this->arrival_time_hours = arrival_time_hours;
+  }
+
+  void Flight::set_arrival_time_minutes(unsigned int arrival_time_minutes) {
+    this->arrival_time_minutes = arrival_time_minutes;
+  }
 }

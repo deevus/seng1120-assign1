@@ -13,6 +13,10 @@ namespace assign1 {
     unsigned int get_arrival_time_hours();
     unsigned int get_arrival_time_minutes();
 
+    void set_flight_number(string flight_number);
+    void set_arrival_time_hours(unsigned int arrival_time_hours);
+    void set_arrival_time_minutes(unsigned int arrival_time_minutes);
+
   private:
     string flight_number;
     unsigned int arrival_time_hours;
