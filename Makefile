@@ -12,7 +12,7 @@ Flight.o: Flight.cpp
 	$(CC) $(CFLAGS) Flight.cpp
 
 clean: 
-	rm -rf *.o LandingDemo
+	rm -rf *.o LandingDemo *.gch
 
 datastruct: LinkedList.o
 
