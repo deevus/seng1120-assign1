@@ -1,3 +1,6 @@
+#ifndef LANDINGLIST_H_DEFINED
+#define LANDINGLIST_H_DEFINED
+
 #include <string>
 #include "datastructures/LinkedList.h"
 
@@ -22,3 +25,5 @@ namespace assign1 {
     friend ostream& operator<< (ostream& os, const LandingList& list);
   };
 }
+
+#endif

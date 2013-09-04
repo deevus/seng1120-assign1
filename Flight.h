@@ -1,6 +1,7 @@
-#include <string>
+#ifndef FLIGHT_H_DEFINED
+#define FLIGHT_H_DEFINED
 
-#pragma once
+#include <string>
 
 using namespace std;
 
@@ -33,3 +34,4 @@ namespace assign1 {
   ostream& operator<< (ostream& os, const Flight& fl);
 }
 
+#endif

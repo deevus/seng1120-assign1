@@ -1,5 +1,6 @@
 CC = g++
 CFLAGS = -c -Wall
+ZIP = zip
 
 all: LandingDemo
 
@@ -13,7 +14,7 @@ Flight.o: Flight.cpp
 	$(CC) $(CFLAGS) Flight.cpp
 
 clean: 
-	rm -rf *.o LandingDemo *.gch
+	rm -rf *.o LandingDemo *.gch *.zip
 
 datastruct: LinkedList.o
 
@@ -25,3 +26,6 @@ LinkedList.o: datastructures/LinkedList.cpp Node.o
 
 run: LandingDemo
 	./LandingDemo
+
+package: LandingDemo.cpp LandingList.h LandingList.cpp Flight.h Flight.cpp datastructures/Node.h datastructures/Node.cpp datastructures/LinkedList.h datastructures/LinkedList.cpp README.md
+	$(ZIP) seng1120_assign1.zip *.h *.cpp datastructures/*.h datastructures/*.cpp README.md Makefile

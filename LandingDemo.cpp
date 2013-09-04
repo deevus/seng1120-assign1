@@ -17,5 +17,7 @@ int main() {
 
   delete landingList2;
   cout << "Landing List 1 After Landing List 2 Deletion | Flights - " << landingList1->Size() << endl << *landingList1 << endl;
+
+  delete landingList1;
 }
 
