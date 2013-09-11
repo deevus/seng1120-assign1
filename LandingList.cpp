@@ -9,6 +9,7 @@
 #include <fstream>
 #include "Flight.h"
 #include <cassert>
+#include <cstdlib>
 
 namespace assign1 {
   LandingList::LandingList() {
