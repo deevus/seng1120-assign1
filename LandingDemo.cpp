@@ -1,5 +1,6 @@
 #include <iostream>
 #include "LandingList.h"
+#include <cstdlib>
 
 using namespace assign1;
 using namespace std;
@@ -19,5 +20,6 @@ int main() {
   cout << "Landing List 1 After Landing List 2 Deletion | Flights - " << landingList1->Size() << endl << *landingList1 << endl;
 
   delete landingList1;
-}
 
+  return EXIT_SUCCESS;
+}

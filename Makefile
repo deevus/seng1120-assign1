@@ -1,8 +1,18 @@
+#**************************#
+#* Simon Hartcher         *#
+#* C3185790               *#
+#* Software Engineering 2 *#
+#**************************#
+
 CC = g++
 CFLAGS = -c -Wall -Idatastructures
 ZIP = zip
 
+all: CC += -DNDEBUG 
 all: LandingDemo
+
+debug: CC += -DDEBUG -g
+debug: LandingDemo
 
 LandingDemo: LandingList.o
 	$(CC) -Idatastructures -o LandingDemo Flight.o Node.o LinkedList.o LandingList.o LandingDemo.cpp 

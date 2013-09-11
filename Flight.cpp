@@ -1,3 +1,9 @@
+/**************************/
+/* Simon Hartcher         */
+/* C3185790               */
+/* Software Engineering 2 */
+/**************************/
+
 #include "Flight.h"
 #include <iostream>
 #include <sstream>
@@ -54,6 +60,10 @@ namespace assign1 {
     return arrival_time_hours * 60 + arrival_time_minutes;
   }
 
+  const int Flight::ArrivalTimeInMinutes() const {
+    return arrival_time_hours * 60 + arrival_time_minutes;
+  }
+
   ostream& operator<< (ostream& os, const Flight& fl) {
     stringstream ss;
     if (fl.get_arrival_time_hours() < 10) ss << "0";
@@ -70,5 +80,18 @@ namespace assign1 {
     os << fl.get_flight_number() << " " << timeString;
     return os;
   };
+
+  int Flight::CompareTo(const Flight& b) {
+    if (this->ArrivalTimeInMinutes() == b.ArrivalTimeInMinutes()) return 0;
+    if (this->ArrivalTimeInMinutes() < b.ArrivalTimeInMinutes()) return -1;
+    return 1;
+  };
+
+  const int Flight::CompareTo(const Flight& b) const {
+    if (this->ArrivalTimeInMinutes() == b.ArrivalTimeInMinutes()) return 0;
+    if (this->ArrivalTimeInMinutes() < b.ArrivalTimeInMinutes()) return -1;
+    return 1;
+  };
+
 }
 
