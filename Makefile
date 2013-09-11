@@ -1,11 +1,11 @@
 CC = g++
-CFLAGS = -c -Wall
+CFLAGS = -c -Wall -Idatastructures
 ZIP = zip
 
 all: LandingDemo
 
 LandingDemo: LandingList.o
-	$(CC) -o LandingDemo Flight.o Node.o LinkedList.o LandingList.o LandingDemo.cpp 
+	$(CC) -Idatastructures -o LandingDemo Flight.o Node.o LinkedList.o LandingList.o LandingDemo.cpp 
 
 LandingList.o: LandingList.cpp Flight.o datastruct
 	$(CC) $(CFLAGS) LandingList.cpp

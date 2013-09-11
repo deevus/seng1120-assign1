@@ -2,7 +2,7 @@
 #define LANDINGLIST_H_DEFINED
 
 #include <string>
-#include "datastructures/LinkedList.h"
+#include "LinkedList.h"
 
 using namespace std;
 
