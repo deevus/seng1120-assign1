@@ -1,3 +1,9 @@
+#**************************#
+#* Simon Hartcher         *#
+#* C3185790               *#
+#* Software Engineering 2 *#
+#**************************#
+
 CC = g++
 CFLAGS = -c -Wall
 ZIP = zip

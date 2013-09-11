@@ -1,3 +1,9 @@
+/**************************/
+/* Simon Hartcher         */
+/* C3185790               */
+/* Software Engineering 2 */
+/**************************/
+
 #include "LandingList.h"
 #include <iostream>
 #include <fstream>
@@ -9,7 +15,7 @@ namespace assign1 {
     flight_list = new LinkedList();
   }
 
-  LandingList::LandingList(string file_name) {
+  LandingList::LandingList(const string file_name) {
     this->flight_list = new LinkedList();
     this->LoadFromFile(file_name);
   }
@@ -18,12 +24,17 @@ namespace assign1 {
     delete flight_list;
   }
 
-  void LandingList::LoadFromFile(string file_name) {
+  void LandingList::LoadFromFile(const string file_name) {
     ifstream file;
     string line;
     unsigned int pos;
 
     file.open(file_name.c_str());
+    if (!file.good()) {
+      cout << "Invalid file. No flights loaded." << endl;
+      return;
+    }
+
     while (file.good()) {
       getline(file, line);
       if (line.length() == 0) continue;
@@ -40,9 +51,12 @@ namespace assign1 {
       AddFlight(flight);
     }
 
+    if (Size() == 0) {
+      cout << "Given file was empty, or no valid flights found." << endl;
+    }
   }
 
-  int LandingList::Size() {
+  size_t LandingList::Size() const {
     return flight_list->Size();
   }
 
@@ -54,7 +68,7 @@ namespace assign1 {
   LandingList& LandingList::operator+= (const LandingList& rhs) {
     Node* r_head = rhs.flight_list->get_head();
     Node* current = r_head;
-    do {
+    if (current != NULL) do {
       value_type flight = current->Data();
       this->AddFlight(flight);
 
@@ -65,7 +79,7 @@ namespace assign1 {
   }
 }
 
-void LandingList::AddFlight(value_type& flight) {
+void LandingList::AddFlight(const value_type& flight) {
   int size = flight_list->Size();
   if (size == 0) {
     //empty list - add as head
@@ -85,7 +99,7 @@ void LandingList::AddFlight(value_type& flight) {
   else {
     //work out the rest
     Node* current = flight_list->get_tail();
-    for (int i = 0; i < flight_list->Size(); ++i) {
+    for (size_t i = 0; i < flight_list->Size(); ++i) {
       value_type data = current->Data();
       if (data.CompareTo(flight) <= 0) {
         break;
@@ -124,7 +138,7 @@ void LandingList::AddFlight(value_type& flight) {
     try {
       cout << "Starting sort test" << endl;
       current = flight_list->get_head();
-      for (int i = 0; i < flight_list->Size() - 1; ++i) {
+      for (size_t i = 0; i < flight_list->Size() - 1; ++i) {
         value_type current_data = current->Data();
         value_type next_data = current->Next()->Data();
         cout << "Flight: " << current_data << endl;
