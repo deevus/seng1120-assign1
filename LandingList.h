@@ -3,6 +3,7 @@
 
 #include <string>
 #include "datastructures/LinkedList.h"
+#include "Flight.h"
 
 using namespace std;
 
@@ -14,6 +15,13 @@ namespace assign1 {
     LandingList(string file_name);
 
     ~LandingList();
+    
+    //Pre-condition:
+    //Given flight is not already in the list
+    //The list is already sorted
+    //Post-condition:
+    //Flight is inserted into place so that the list stays sorted
+    void AddFlight(value_type& flight);
 
     int Size();
     LandingList& operator+= (const LandingList& rhs);

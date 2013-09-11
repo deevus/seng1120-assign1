@@ -25,6 +25,8 @@ namespace assign1 {
 
     int ArrivalTimeInMinutes();
 
+    int CompareTo(Flight& b); 
+
   private:
     string flight_number;
     unsigned int arrival_time_hours;

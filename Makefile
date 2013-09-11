@@ -2,7 +2,11 @@ CC = g++
 CFLAGS = -c -Wall
 ZIP = zip
 
+all: CC += -DNDEBUG 
 all: LandingDemo
+
+debug: CC += -DDEBUG -g
+debug: LandingDemo
 
 LandingDemo: LandingList.o
 	$(CC) -o LandingDemo Flight.o Node.o LinkedList.o LandingList.o LandingDemo.cpp 

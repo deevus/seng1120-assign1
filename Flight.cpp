@@ -70,5 +70,12 @@ namespace assign1 {
     os << fl.get_flight_number() << " " << timeString;
     return os;
   };
+
+  int Flight::CompareTo(Flight& b) {
+    if (this->ArrivalTimeInMinutes() == b.ArrivalTimeInMinutes()) return 0;
+    if (this->ArrivalTimeInMinutes() < b.ArrivalTimeInMinutes()) return -1;
+    return 1;
+  }
+
 }
 
